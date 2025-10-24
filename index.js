@@ -9,7 +9,7 @@ const TOKEN = process.env.BOT_TOKEN;
 const TELEGRAM_API = `https://api.telegram.org/bot${TOKEN}`;
 
 // replace this with your own chat ID (we'll get it next)
-const CHAT_ID = "YOUR_CHAT_ID_HERE"; 
+const CHAT_ID = "1685859860"; 
 
 // homepage
 app.get("/", (req, res) => res.send("Bot is live ✅"));
