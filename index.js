@@ -20,11 +20,15 @@ app.post("/api/webhook", async (req, res) => {
     await fetch(`${TELEGRAM_API}/sendMessage`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ chat_id: chatId, text: `You said: ${text}` }),
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: `You said: ${text}`,
+      }),
     });
   }
 
   res.sendStatus(200);
 });
 
+export default app;
 export const handler = serverless(app);
