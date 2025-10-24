@@ -7,7 +7,9 @@ app.use(express.json());
 const TOKEN = process.env.BOT_TOKEN;
 const TELEGRAM_API = `https://api.telegram.org/bot${TOKEN}`;
 
-app.get("/", (req, res) => res.send("Bot is live! ✅"));
+app.get("/", (req, res) => {
+  res.send("Bot is live ✅");
+});
 
 app.post("/webhook", async (req, res) => {
   const data = req.body;
@@ -29,4 +31,5 @@ app.post("/webhook", async (req, res) => {
   res.sendStatus(200);
 });
 
-app.listen(10000, () => console.log("Server running"));
+const PORT = process.env.PORT || 10000;
+app.listen(PORT, "0.0.0.0", () => console.log(`Server running on ${PORT}`));
